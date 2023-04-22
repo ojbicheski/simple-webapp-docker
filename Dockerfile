@@ -6,7 +6,8 @@ RUN apt-get install -y  wget build-essential libreadline-gplv2-dev libncursesw5-
 RUN wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz
 RUN tar xzf Python-3.10.8.tgz 
 RUN cd Python-3.10.8
-RUN chmod -x configure && ./configure --enable-optimizations
+RUN chmod 755 configure 
+RUN ./configure --enable-optimizations
 RUN make altinstall 
 
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
